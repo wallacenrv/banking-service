@@ -1,0 +1,6 @@
+O que aprendemos?
+
+Criar um projeto Quarkus através do site code.quarkus.io;
+Consumir uma API Rest, usando o Rest Client para pegar informações cadastrais de agências bancárias;
+Desenvolver uma API Rest que cadastra agências bancárias usando recursos do Jakarta EE;
+Criar também outras APIs que buscam agências por ID, deletam agências e alteram informações da agência.

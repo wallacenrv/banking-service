@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Endereco.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">banking-service</a> &gt; <a href="index.source.html" class="el_package">br.com.alura.domain</a> &gt; <span class="el_source">Endereco.java</span></div><h1>Endereco.java</h1><pre class="source lang-java linenums">package br.com.alura.domain;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Endereco {
+
+<span class="fc" id="L11">    public Endereco() {</span>
+
+<span class="fc" id="L13">    }</span>
+
+<span class="nc" id="L15">    public Endereco(String rua, String logradouro, String complemento, Integer numero) {</span>
+<span class="nc" id="L16">        this.rua = rua;</span>
+<span class="nc" id="L17">        this.logradouro = logradouro;</span>
+<span class="nc" id="L18">        this.complemento = complemento;</span>
+<span class="nc" id="L19">        this.numero = numero;</span>
+<span class="nc" id="L20">    }</span>
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String rua;
+    private String logradouro;
+    private String complemento;
+    private Integer numero;
+
+
+    public Integer getId() {
+<span class="nc" id="L32">        return id;</span>
+    }
+
+    public String getRua() {
+<span class="nc" id="L36">        return rua;</span>
+    }
+
+    public String getLogradouro() {
+<span class="nc" id="L40">        return logradouro;</span>
+    }
+
+    public String getComplemento() {
+<span class="nc" id="L44">        return complemento;</span>
+    }
+
+    public Integer getNumero() {
+<span class="nc" id="L48">        return numero;</span>
+    }
+
+    public void setRua(String rua) {
+<span class="fc" id="L52">        this.rua = rua;</span>
+<span class="fc" id="L53">    }</span>
+
+    public void setLogradouro(String logradouro) {
+<span class="fc" id="L56">        this.logradouro = logradouro;</span>
+<span class="fc" id="L57">    }</span>
+
+    public void setComplemento(String complemento) {
+<span class="fc" id="L60">        this.complemento = complemento;</span>
+<span class="fc" id="L61">    }</span>
+
+    public void setNumero(Integer numero) {
+<span class="fc" id="L64">        this.numero = numero;</span>
+<span class="fc" id="L65">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
