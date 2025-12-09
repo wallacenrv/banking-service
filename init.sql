@@ -30,5 +30,4 @@ create table if not exists agencia(
 -- endereco: Armazena informações de endereços, como rua, logradouro, complemento e número.
 -- agencia: Armazena informações sobre as agências, incluindo nome, razão social e CNPJ. Essa tabela também possui uma
 -- chave estrangeira (endereco_id) que se relaciona com a tabela endereco.
--- Em resumo, o init.sql garante que o banco de dados seja inicializado com a estrutura necessária para o curso, f
--- acilitando o desenvolvimento e evitando a necessidade de criar as tabelas manualmente.
+-- Em resumo, o init.sql garante que o banco de dados seja inicializado com a estrutura necessária para o curso, facilitando o desenvolvimento e evitando a necessidade de criar as tabelas manualmente.

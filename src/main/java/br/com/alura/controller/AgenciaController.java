@@ -24,7 +24,7 @@ public class AgenciaController {
     @Transactional
     public RestResponse<Void> cadastrar(Agencia agencia, @Context UriInfo uriInfo) {
         this.agenciaService.cadastrar(agencia);
-        return RestResponse.created(uriInfo.getAbsolutePath());
+        return RestResponse.created(uriInfo.getAbsolutePathBuilder().build());
     }
 
     @GET

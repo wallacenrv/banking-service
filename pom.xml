@@ -75,6 +75,12 @@
             <artifactId>quarkus-jacoco</artifactId>
             <scope>test</scope>
         </dependency>
+<!-- adiocionado o micromiter - O Micrometer atua como uma ponte, permitindo que você crie métricas de forma agnóstica
+e as exporte para diferentes sistemas de monitoramento, incluindo o Prometheus.-->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-micrometer-registry-prometheus</artifactId>
+        </dependency>
 
     </dependencies>
 

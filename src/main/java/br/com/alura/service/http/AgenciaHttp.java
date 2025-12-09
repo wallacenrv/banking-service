@@ -1,10 +1,8 @@
 package br.com.alura.service.http;
-// mapeando o que vem da api externa
+
+import br.com.alura.service.http.SituacaoCadastral;
+
 public class AgenciaHttp {
-
-    public AgenciaHttp(){}
-
-
 
     public AgenciaHttp(String nome, String razaoSocial, String cnpj, String situacaoCadastral) {
         this.nome = nome;
@@ -13,24 +11,24 @@ public class AgenciaHttp {
         this.situacaoCadastral = SituacaoCadastral.valueOf(situacaoCadastral);
     }
 
-     private String nome;
-     private String razaoSocial;
-     private String cnpj;
-     private SituacaoCadastral situacaoCadastral;
+    private final String nome;
+    private final String razaoSocial;
+    private final String cnpj;
+    private final SituacaoCadastral situacaoCadastral;
 
-     public String  getNome() {
-         return nome;
-     }
+    public String getNome() {
+        return nome;
+    }
 
-     public String getRazaoSocial() {
-            return razaoSocial;
-     }
+    public String getRazaoSocial() {
+        return razaoSocial;
+    }
 
-     public String getCnpj() {
-         return cnpj;
-     }
+    public String getCnpj() {
+        return cnpj;
+    }
 
-     public String getSituacaoCadastral() {
-         return situacaoCadastral.toString();
-     }
+    public SituacaoCadastral getSituacaoCadastral() {
+        return situacaoCadastral;
+    }
 }

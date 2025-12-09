@@ -8,11 +8,12 @@ import jakarta.persistence.Id;
 @Entity
 public class Endereco {
 
-    public Endereco() {
+    Endereco() {
 
     }
 
-    public Endereco(String rua, String logradouro, String complemento, Integer numero) {
+    public Endereco(Integer id, String rua, String logradouro, String complemento, Integer numero) {
+        this.id = id;
         this.rua = rua;
         this.logradouro = logradouro;
         this.complemento = complemento;
@@ -26,7 +27,6 @@ public class Endereco {
     private String logradouro;
     private String complemento;
     private Integer numero;
-
 
     public Integer getId() {
         return id;
@@ -46,21 +46,5 @@ public class Endereco {
 
     public Integer getNumero() {
         return numero;
-    }
-
-    public void setRua(String rua) {
-        this.rua = rua;
-    }
-
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
-    public void setNumero(Integer numero) {
-        this.numero = numero;
     }
 }

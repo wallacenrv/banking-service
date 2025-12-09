@@ -3,21 +3,21 @@ package br.com.alura.service.http;
 import br.com.alura.domain.Agencia;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 import java.util.List;
 
-//faz a comunicação com a api externa
-@Path("/situacao-cadastral") // Define o caminho base para os endpoints deste serviço da api externa
-@RegisterRestClient(configKey = "situacao-cadastral-api") // Define que esta interface é um cliente REST
+// Faz a comunicação com a API externa
+@Path("/situacao-cadastral")
+@RegisterRestClient(configKey = "situacao-cadastral-api")
 public interface SituacaoCadastralHttpService {
 
     @GET
-    @Path("/{cnpj}") // Define o caminho para buscar uma agência pelo CNPJ
-    Agencia buscarPorCnpj(String cnpj); // Método para buscar uma agência pelo CNPJ, retornando um objeto AgenciaHttp
-
-
+    @Path("{cnpj}")
+    AgenciaHttp buscarPorCnpj(String cnpj);
 }
-
 
 //microprofile

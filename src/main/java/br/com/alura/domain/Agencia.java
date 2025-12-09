@@ -6,39 +6,32 @@ import jakarta.persistence.*;
 @Entity
 public class Agencia {
 
+   public Agencia() {
 
+    }
 
-    public Agencia() {}
-
-    public Agencia(Long id, String nome, String razaoSocial, String cnpj, SituacaoCadastral situacaoCadastral, Endereco endereco) {
+    public Agencia(Integer id, String nome, String razaoSocial, String cnpj, Endereco endereco) {
         this.id = id;
         this.nome = nome;
         this.razaoSocial = razaoSocial;
         this.cnpj = cnpj;
-        this.situacaoCadastral = situacaoCadastral;
         this.endereco = endereco;
     }
 
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String nome;
+
     @Column(name = "razao_social")
     private String razaoSocial;
     private String cnpj;
-    private SituacaoCadastral situacaoCadastral;
 
-    //toda vez que uma agencia for criada, um endereco também será criado
-    @OneToOne(cascade =  CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id")
-
     private Endereco endereco;
 
-    public SituacaoCadastral getSituacaoCadastral() {
-        return situacaoCadastral;
-    }
-
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -57,26 +50,4 @@ public class Agencia {
     public Endereco getEndereco() {
         return endereco;
     }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
-    public void setSituacaoCadastral(SituacaoCadastral situacaoCadastral) {
-        this.situacaoCadastral = situacaoCadastral;
-    }
-
-    public void setCnpj(String cnpj) {
-            this.cnpj = cnpj;
-    }
-
-    public void setNome(String nome) {
-            this.nome = nome;
-    }
-
-    public void setRazaoSocial(String razaoSocial) {
-        this.razaoSocial = razaoSocial;
-    }
-
-
 }
