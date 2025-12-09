@@ -1,0 +1,10 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+banking-service,br.com.alura.exception,AgenciaNaoEncontradaException,4,0,0,0,2,0,1,0,1,0
+banking-service,br.com.alura.controller,AgenciaController,37,0,0,0,11,0,5,0,5,0
+banking-service,br.com.alura.service,AgenciaService,46,54,1,3,7,13,4,3,3,2
+banking-service,br.com.alura.repository,AgenciaRepository,0,3,0,0,0,1,0,1,0,1
+banking-service,br.com.alura.service.http,AgenciaHttp,9,19,0,0,3,7,3,2,3,2
+banking-service,br.com.alura.service.http,AgenciaNaoAtivaOuNaoEncontradaException,4,3,0,0,1,1,1,1,1,1
+banking-service,br.com.alura.service.http,SituacaoCadastral,0,15,0,0,0,2,0,1,0,1
+banking-service,br.com.alura.domain,Endereco,15,21,0,0,5,9,5,2,5,2
+banking-service,br.com.alura.domain,Agencia,12,24,0,0,4,10,4,3,4,3
