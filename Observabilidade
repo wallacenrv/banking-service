@@ -1,14 +1,17 @@
-Para esta aula, será necessário subir um container do Prometheus que irá se integrar a nossa aplicação Quarkus com Micrometer. Siga os passos abaixo:
+Para esta aula, será necessário subir um container do Prometheus que irá se integrar a nossa
+aplicação Quarkus com Micrometer. Siga os passos abaixo:
 
 Passo 1: Adicione a seguinte dependência no pom.xml
+
 <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-micrometer-registry-prometheus</artifactId>
 </dependency>
-Copiar código
+
 Passo 2: habilite a exposição de métricas no application.properties**
 quarkus.micrometer.export.prometheus.path=/metrics
-Copiar código
+
+
 Passo 3: Crie o arquivo de configuração do Prometheus na raiz do projeto
 scrape_configs:
   - job_name: 'banking-service-app'
@@ -16,34 +19,36 @@ scrape_configs:
     metrics_path: '/metrics'
     static_configs:
       - targets: ['host.docker.internal:8080']
-Copiar código
+
+
 Passo 4: Suba o container do Prometheus
 Execute o comando abaixo para iniciar o Prometheus com o arquivo de configuração:
 
 MacOS / Linux
-docker run -d --name prometheus \
-  -p 9090:9090 \
-  -v $(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml \
-  prom/prometheus
-Copiar código
+docker run -d --name prometheus -p 9090:9090 -v $(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+docker compose up -d prometheus
+docker compose down prometheus
+docker rm -f prometheus
+
+
 Windows
 docker run -d --name prometheus -p 9090:9090 -v C:/Users/PCESTUDIO/Workspace/banking-service/banking-service/prometheus.yaml:/etc/prometheus/prometheus.yml prom/prometheus
-Copiar código
+
 Obs: Lembrando que o nome PCESTUDIO é do computador que estou usando. No seu caso, você precisa alterar esse nome para o da sua máquina.
-
 Agora, o Prometheus estará acessível em http://localhost:9090 e estará coletando métricas da aplicação Quarkus em execução localmente.
-
 Nota: O endpoint host.docker.internal funciona para conexões entre o Docker e a máquina local no Windows e macOS.
 
 Passo 5: Suba o container do Grafana
 Com o container do Prometheus iniciado, execute o comando para iniciar o Grafana:
 
 docker run -d --name grafana -p 3000:3000 grafana/grafana
-Copiar código
+docker compose up -d grafana
+docker compose down grafana
+docker rm -f grafana
+
 O Grafana estará acessível em http://localhost:3000 com as credenciais abaixo:
 
 Usuário padrão: admin
-
 Senha padrão: admin
 
 Você será solicitado a redefinir a senha na primeira vez que fizer login.

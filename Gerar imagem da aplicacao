@@ -1,0 +1,17 @@
+1- gerar a imagem e subir para o Docker Hub
+
+<dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-container-image-docker</artifactId>
+</dependency>
+
+
+2 - Gerando a imagem da aplicação
+mvn package "-Dquarkus.container-image.build=true"
+
+3- Realizando o versionamento das imagens
+docker tag wallacen/banking-service:1.0.0-SNAPSHOT wallacen/banking-service:v1
+docker login
+
+4 - Apos criar a tag no docker hub, subir a imagem
+docker push wallacen/banking-service:v1

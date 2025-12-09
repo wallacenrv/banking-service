@@ -82,6 +82,14 @@ e as exporte para diferentes sistemas de monitoramento, incluindo o Prometheus.-
             <artifactId>quarkus-micrometer-registry-prometheus</artifactId>
         </dependency>
 
+        <!-- Gerar a imagem e subir para o Docker Hub-->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-container-image-docker</artifactId>
+        </dependency>
+
+
+
     </dependencies>
 
     <build>
